@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap')
+@import config
+@import variables
+// CUSTOM USER STYLES & IMPORTS
+.container
+    max-width: 1200px
+    margin: 0 auto
+    padding-right: 15px
+    padding-left: 15px
+
+.header
+    width: 100%
+    padding-top: 20px
+    box-shadow: 0px 12px 12px $shadow
+    position: relative
+    z-index: 2
+    &__people
+        display: flex
+        align-items: center
+        margin-bottom: 15px
+        position: relative
+    &__logo
+        flex: 1 auto
+    &__link
+        display: block
+        width: 55px
+    &__name
+        font-family: $opensans
+        font-style: normal
+        font-weight: normal
+        font-size: 16px
+        line-height: 20px
+        letter-spacing: -0.5px
+    &__icon
+        margin-left: 20px
+        border-radius: 50%
+    &__sub-menu
+        position: relative
+        width: 16px
+        height: 16px
+        background: url(..//images/src/arrow.svg) center no-repeat
+        background-size: cover
+        margin-left: 12px
+        cursor: pointer
+    &__sub-list
+        position: absolute
+        list-style-type: none
+        padding: 0
+        min-width: 150px
+        background: $white
+        top: -103px
+        right: 0
+        z-index: 4
+        visibility: hidden
+        opacity: 0
+        border-radius: 5px
+        transition: .5s
+        &.active
+            visibility: visible
+            opacity: 1
+            top: 67px
+            transition: .5s
+            right: 75px
+    &__sub-link
+        text-align: center
+    &__exit
+        color: $pink
+        text-transform: uppercase
+        &:hover
+            text-decoration: none
+            color: $orange
+    &__bell
+        width: 32px
+        height: 32px
+        background: url(..//images/src/bell.svg) center no-repeat
+        background-size: cover
+        margin-left: 18px
+    &__present
+        width: 32px
+        height: 32px
+        background: url(..//images/src/present.svg) center no-repeat
+        background-size: cover
+    &__medium
+        width: 32px
+        height: 32px
+        background: url(..//images/src/medium.svg) center no-repeat
+        background-size: cover
+        margin-right: -5px
+    &__navigation-links
+        display: inline-block
+        margin-right: 34px
+        padding-bottom: 23px
+        max-width: 150px
+        text-decoration: none
+        color: $textcolor
+        opacity: .6
+        font-family: $opensans
+        font-style: normal
+        font-weight: 600
+        font-size: 14px
+        line-height: 19px
+        text-transform: uppercase
+        position: relative
+        &.active
+            opacity: 1
+            &::after
+                content: ''
+                display: block
+                position: absolute
+                width: 100%
+                height: 4px
+                background: linear-gradient(135deg, #FF974F 0%, #E32C75 100%)
+                left: 0
+                bottom: 0
+        &:hover
+            text-decoration: none
+            color: $textcolor
+            opacity: 1
+        &_last
+            margin-right: 0
+.main
+    background: $mainBg
+    &>.container
+        display: flex
+        padding-top: 72px
+        justify-content: space-between
+.person
+    display: flex
+    flex-direction: column
+    width: 100%
+    max-width: 350px
+    &__info
+        display: flex
+        justify-content: space-between
+        margin-bottom: 32px
+    &__photo
+        max-width: 120px
+        border-radius: 50%
+    &__data
+        display: flex
+        flex-direction: column
+    &__name
+        font-style: normal
+        font-weight: 600
+        font-size: 24px
+        line-height: 26px
+        margin-bottom: 8px
+    &__link
+        font-family: $opensans
+        font-style: normal
+        font-weight: normal
+        font-size: 16px
+        line-height: 20px
+        letter-spacing: -0.5px
+        margin-bottom: 15px
+        color: $darkText
+        &:hover
+            text-decoration: none
+            color: $orange
+    &__edit
+        font-family: $opensans
+        font-style: normal
+        font-weight: normal
+        font-size: 16px
+        line-height: 20px
+        text-decoration: underline
+        color: $orange
+        padding-left: 28px
+        position: relative
+        &::before
+            position: absolute
+            content: ''
+            bottom: 0
+            left: 0
+            width: 20px
+            height: 20px
+            background: url(..//images/src/edit.svg) center no-repeat
+            background-size: cover
+        &:hover
+            color: $pink
+    &__addition
+        position: relative
+        width: 16px
+        height: 16px
+        background: url(..//images/src/dots.svg) center no-repeat
+        background-size: cover
+        cursor: pointer
+        margin-right: 18px
+        margin-top: 4px
+    &__about-list
+        position: absolute
+        list-style-type: none
+        padding: 24px 0
+        min-width: 150px
+        background: $white
+        opacity: .94
+        top: 0px
+        left: 0
+        width: 176px
+        height: 124px
+        border-radius: 5px
+        opacity: 0
+        visibility: hidden
+        transition: .5s
+        z-index: 3
+        &.active
+            opacity: 1
+            visibility: visible
+            top: 33px
+            transition: .5s
+            z-index: 3
+    &__about-btn
+        display: flex
+
+    &__button
+        appearance: none
+        border: none
+        background: $white
+        margin: 0 auto
+        font-family: $opensans
+        font-style: normal
+        font-weight: 600
+        font-size: 16px
+        line-height: 22px
+        color: $textcolor
+        padding-top: 8px
+        padding-bottom: 8px
+        width: 100%
+        text-align: left
+        padding-left: 60px
+        position: relative
+        &:active
+            background: $mainBg
+        &_report
+            &::before
+                content: ''
+                position: absolute
+                bottom: 9px
+                left: 22px
+                width: 21px
+                height: 21px
+                background: url(..//images/src/report.svg) center no-repeat
+                background-size: cover
+        &_block
+            &::before
+                content: ''
+                position: absolute
+                bottom: 9px
+                left: 22px
+                width: 21px
+                height: 21px
+                background: url(..//images/src/block.svg) center no-repeat
+                background-size: cover
+    &__show
+        display: flex
+    &__indicator
+        display: flex
+        flex-direction: column
+        margin-right: 48px
+        align-items: center
+        margin-bottom: 23px
+    &__indicator-number
+        font-family: 'Open Sans', sans-serif
+        font-style: normal
+        font-weight: 700
+        font-size: 18px
+        line-height: 24px
+        color: $darkText
+        margin-bottom: 1px
+        margin-left: 7px
+    &__indicator-title
+        font-family: $opensans
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 24px
+        margin-left: 1px
+    &__indicator_last
+        margin-right: 0
+    &__about
+        font-family: $opensans
+        font-style: normal
+        font-weight: normal
+        font-size: 16px
+        line-height: 24px
+        color: $darkText
+.notes
+    position: relative
+    max-width: 772px
+    width: 100%
+    margin-bottom: 221px
+    &__add
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        top: -104px
+        right: 0
+        width: 64px
+        height: 64px
+        border-radius: 50%
+        background: linear-gradient(135deg, #FF974F 0%, #E32C75 100%)
+        z-index: 3
+        cursor: pointer
+    &__plus
+        width: 20px
+        height: 20px
+        background: url(..//images/src/plus.svg) center no-repeat
+        background-size: cover
+    &__switch
+        display: flex
+        margin-bottom: 24px
+    &__switch-parametr
+        font-family: $opensans
+        font-style: normal
+        font-weight: 600
+        font-size: 16px
+        line-height: 22px
+        &_first
+            margin-left: 11px
+    &__choice
+        margin: 0 30px 30px
+    &__input
+        position: relative
+        width: 40px
+        height: 24px
+        appearance: none
+        outline: none
+        background: $grey
+        border-radius: 20px
+        transition: .5s
+        cursor: pointer
+        &::before
+            content: ''
+            position: absolute
+            width: 16px
+            height: 16px
+            border-radius: 50%
+            top: 0
+            left: 0
+            background: $white
+            transition: .5s
+            transform: translate(25%, 25%)
+        &:checked
+            background: $checkboxCheck
+            &::before
+                transform: translate(125%, 25%)
+    &__list
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+.card
+    box-sizing: border-box
+    max-width: 374px
+    padding: 24px
+    display: flex
+    flex-direction: column
+    background: $white
+    border-radius: 8px
+    margin-bottom: 24px
+    box-shadow: 0px 12px 12px $shadow
+    &__link
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 13px
+    &__link-span
+        font-family: $opensans
+        font-style: normal
+        font-weight: 600
+        font-size: 16px
+        line-height: 22px
+        margin-right: 8px
+    &__adress
+        font-family: $opensans
+        font-style: normal
+        font-weight: 600
+        font-size: 16px
+        line-height: 16px
+        background: $grey
+        max-width: 238px
+        text-overflow: ellipsis
+        overflow: hidden
+        border-radius: 3px
+    &__text
+        font-style: normal
+        font-weight: normal
+        font-size: 36px
+        line-height: 44px
+        margin-bottom: 42px
+    &__statistics
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__author
+        display: flex
+        align-items: center
+    &__icon
+        width: 24px
+        height: 24px
+        margin-right: 8px
+        background: $grey
+        border-radius: 50%
+    &__name
+        font-family: $opensans
+        font-style: normal
+        font-weight: 600
+        font-size: 14px
+        line-height: 19px
+    &__meaning
+        display: flex
+        flex-direction: row-reverse
+    &__play
+        margin-right: 13px
+        display: flex
+    &__play-element
+        width: 16px
+        height: 16px
+        margin-right: 8px
+        background: url(..//images/src/play.svg) center no-repeat
+        background-size: cover
+        cursor: pointer
+    &__play-number
+        font-family: $opensans
+        font-style: normal
+        font-weight: 600
+        font-size: 14px
+        line-height: 19px
+    &__like
+        display: flex
+    &__like-element
+        width: 18px
+        height: 16px
+        background: url(..//images/src/like.svg) center no-repeat
+        background-size: cover
+        margin-right: 8px
+        cursor: pointer
+    &__like-number
+        font-family: $opensans
+        font-style: normal
+        font-weight: 600
+        font-size: 14px
+        line-height: 19px
+    &__share
+        margin-bottom: 9px
+        min-height: 24px
+    &__share-text
+        position: relative
+        font-family: $opensans
+        font-style: normal
+        font-weight: 600
+        font-size: 16px
+        line-height: 22px
+        padding-left: 22px
+        &::before
+            position: absolute
+            content: ''
+            width: 16px
+            height: 16px
+            top: 2px
+            left: 3px
+            background: url(..//images/src/link.svg) center no-repeat
+            background-size: cover
+    &__link-share
+        font-family: $opensans
+        font-style: normal
+        font-weight: normal
+        font-size: 18px
+        line-height: 25px
+        color: $orange
+        &:hover
+            text-decoration: none
+            color: $pink
+@media only screen and (max-width: 1175px)
+    .card
+        max-width: 770px
+    .notes
+        padding-left: 24px
+@media only screen and (max-width: 775px)
+    .main
+        &>.container
+            flex-direction: column
+            align-items: center
+    .header
+        &__sub-list
+            &.active
+                right: 0
+                top: 40px
+    .person
+        max-width: 688px
+        &__about
+            margin-bottom: 50px
+        &__info
+            justify-content: start
+        &__photo
+            margin-right: 24px
+        &__name
+            margin-right: 25px
+    .notes
+        padding-left: 0
+        margin-bottom: 40px
+        &__add
+            top: -20px
+@media only screen and (max-width: 530px)
+    .person
+        &__about-list
+            &.active
+                top: 50px
+                left: -193px
+@media only screen and (max-width: 420px)
+    .header
+        &__name
+            display: none
+        &__bell
+            margin-left: 7px
+    .card
+        &__adress
+            max-width: 155px
+        &__text
+            font-size: 26px
+    .person
+        &__photo
+            margin-right: 15px
+        &__name
+            font-size: 18px
+            margin-right: 15px
+        &__indicator
+            margin-right: 40px
+        &__about-list
+            &.active
+                left: -161px
+    .notes
+        &__switch-parametr
+            &_first
+                margin-left: 0
+        &__choice
+            margin: 0 20px 0
